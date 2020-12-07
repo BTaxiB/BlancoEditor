@@ -1,0 +1,59 @@
+html {
+    height: 1024px;
+    width: 1920px;
+}
+
+h5 {
+    color: greenyellow;
+}
+
+textarea:hover {
+    background: burlywood;
+}
+
+select {
+    margin: 0 auto;
+}
+
+.save {
+    margin: 15px auto 0 auto;
+    width: 100px;
+}
+
+.save:hover {
+    background-color: cornflowerblue;
+}
+
+.main {
+    margin: 100px auto 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#fileTitle {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#editor {
+    position: relative;
+    margin: 20px auto 0 auto;
+    height: fit-content;
+    width: 80%;
+    background-image: url('/assets/download.png');
+    background-repeat: round;
+    background-size: auto;
+}
+
+#response {
+    width: 300px;
+    height: 80px;
+    display: none;
+    position: absolute;
+    /* width: auto; */
+    /* height: auto; */
+    top: 0;
+}
