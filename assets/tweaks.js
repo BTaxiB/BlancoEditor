@@ -1,10 +1,10 @@
 
 
-function convertP(self) {
+function convertT(self) {
     self.innerHTML = self.value;
 };
 
-function ctrlSaveP(e) {
+function ctrlSaveT(e) {
     switch (e) {
         case e.key === 's' && e.ctrlKey:
             save();
@@ -21,15 +21,15 @@ function ctrlSaveP(e) {
     }
 }
 
-function loadP() {
+function loadT() {
     var title = $("#files option:selected").html();
     var filename = $("#files option:selected").val();
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'ajax.php',
         type: 'POST',
         dataType: 'text',
         data: {
-            key: 'showP',
+            key: 'show',
             file: filename
         },
         success: (response) => {
@@ -40,15 +40,15 @@ function loadP() {
     });
 }
 
-function saveP(){
+function saveT(){
     var code = $("#editor").text();
     var file = $("#filename").val();
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'ajax.php',
         type: 'POST',
         dataType: 'json',
         data: {
-            key: 'saveP',
+            key: 'save',
             data: code,
             file: file
         },
@@ -64,14 +64,14 @@ function saveP(){
     });
 }
 
-function searchFileP(dir) {
+function searchFileT(dir) {
     console.log($("input[name='searchFile']").val())
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'ajax.php',
         type: 'POST',
         dataType: 'text',
         data: {
-            key: 'searchP',
+            key: 'search',
             dir: dir,
             file: $("input[name='searchFile']").val()
         },
@@ -84,13 +84,13 @@ function searchFileP(dir) {
     });
 }
 
-function loadSelectP(dir) {
+function loadSelectT(dir) {
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'ajax.php',
         type: 'POST',
         dataType: 'text',
         data: {
-            key: 'loadSelectP',
+            key: 'loadSelect',
             dir: dir,
         },
         success: (response) => {

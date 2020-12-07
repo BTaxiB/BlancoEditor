@@ -1,10 +1,10 @@
 <?php
-require_once 'Editor.php';
+require_once 'src/Controller.php';
 if (isset($_POST['key'])) {
-    if ($_POST['key'] == 'save') {
-        $data = Editor::format($_POST['data'], $_POST['file']);
-        $message = Editor::save($_POST['file'], $data);
-        $file = Editor::getData($_POST['file']);
+    if ($_POST['key'] == 'saveP') {
+        $data = $editor::format($_POST['data'], $_POST['file']);
+        $message = $editor::save($_POST['file'], $data);
+        $file = $editor::getData($_POST['file']);
 
         /**
          * todo later
@@ -23,21 +23,21 @@ if (isset($_POST['key'])) {
         ]);
     }
 
-    if ($_POST['key'] == 'show') {
-        echo Editor::make(Editor::getData($_POST['file']));
+    if ($_POST['key'] == 'showP') {
+        echo $editor::make($editor::getData($_POST['file']));
     }
 
-    if ($_POST['key'] == 'load') {
-        $files = Editor::getCommands($_POST['dir']);
-        echo Editor::make(Editor::getData("{$_POST['dir']}/{$files[2]}"));
+    if ($_POST['key'] == 'loadP') {
+        $files = $editor::getCommands($_POST['dir']);
+        echo $editor::make($editor::getData("{$_POST['dir']}/{$files[2]}"));
     }
 
-    if ($_POST['key'] == 'loadSelect') {
-        Editor::selectBox($_POST['dir']);
+    if ($_POST['key'] == 'loadSelectP') {
+        $editor::selectBox($_POST['dir']);
     }
 
-    if ($_POST['key'] == 'select') {
-        $options = Editor::getCommands($_POST['folder']);
+    if ($_POST['key'] == 'selectP') {
+        $options = $editor::getCommands($_POST['folder']);
 
         foreach ($options as $o) {
             if ($o !== '.' && $o !== '..') {
@@ -48,7 +48,7 @@ if (isset($_POST['key'])) {
     }
 
     if ($_POST['key'] == 'search') {
-        $options = Editor::getFile($_POST['dir'], $_POST['file']);
+        $options = $editor::getFile($_POST['dir'], $_POST['file']);
         $size = count($options);
         $html = "" ?? null;
         foreach ($options as $o) {

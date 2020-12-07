@@ -34,16 +34,17 @@ select {
 
 #fileTitle {
     width: 400px;
-    margin: 0 auto;
+    margin: 50px auto -50px auto;
     text-align: center;
+    font-family: "Titillium Web", sans-serif;
 }
 
-#editor {
+.editor {
     position: relative;
     margin: 20px auto 0 auto;
     height: fit-content;
     width: 80%;
-    background-image: url('/assets/download.png');
+    background-image: url("/assets/download.png");
     background-repeat: round;
     background-size: auto;
 }
@@ -56,4 +57,45 @@ select {
     /* width: auto; */
     /* height: auto; */
     top: 0;
+}
+
+#tweaks {
+    display: hidden;
+}
+
+.windowP {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.windowP:hover{
+    background-color: darkkhaki;
+}
+
+.windowT {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.windowT:hover{
+    background-color: darkkhaki;
+}
+
+.switch {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px auto;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.label {
+    width: 60%;
+    margin-right: -90%;
 }

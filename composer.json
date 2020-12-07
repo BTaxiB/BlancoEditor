@@ -1,0 +1,15 @@
+{
+    "name": "miljan/testdevtool",
+    "authors": [
+        {
+            "name": "btaxib",
+            "email": "joksimovicmiki7@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src/class/"
+        }
+    },
+    "require": {}
+}

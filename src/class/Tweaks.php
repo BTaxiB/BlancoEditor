@@ -1,8 +1,8 @@
 <?php
 
-// namespace Editor;
+namespace Source;
 
-trait Editor
+class Tweaks
 {
     public static function format($data)
     {
@@ -41,7 +41,7 @@ trait Editor
             if (stristr($lines[$i], "//editable")) {
                 $data[] = "<span>{$lines[$i]}</span>" . PHP_EOL;
                 $editable = trim($lines[$i + 1]) ?? null;
-                $data[] = '<textarea class="form-control editable" rows="2" cols="10" style="resize: none;" oninput="display(this);">' . $editable . '</textarea></br>' . PHP_EOL . PHP_EOL;
+                $data[] = '<textarea class="form-control editable" rows="2" cols="10" style="resize: none;" oninput="convertP(this);">' . $editable . '</textarea></br>' . PHP_EOL . PHP_EOL;
                 $i = $i + 2;
             } elseif (trim($lines[$i]) == '') {
                 $data[] = trim($lines[$i]);
