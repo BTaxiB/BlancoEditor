@@ -5,3 +5,6 @@ use Source\Tweaks as Tweaks;
 
 $editor = new Editor;
 $tweaks = new Tweaks;
+
+$editor::setDirectory('test' ?? "");
+DEFINE('FOLDER', $editor::getDirectory());

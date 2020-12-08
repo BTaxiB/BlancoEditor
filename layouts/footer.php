@@ -7,6 +7,11 @@
 <script src="assets/js/editor.js"></script>
 <script src="assets/js/tweaks.js"></script>
 <script src="assets/js/targets.js"></script>
+<script>
+loadSelectP("<?php echo FOLDER; ?>");
+initEditor("<?php echo FOLDER; ?>");
+initTweaks("<?php echo FOLDER; ?>");
+</script>
 </body>
 
 </html>

@@ -28,31 +28,31 @@ if (isset($_POST['key'])) {
     }
 
     if ($_POST['key'] == 'loadP') {
-        $files = $editor::getCommands($_POST['dir']);
-        echo $editor::make($editor::getData("{$_POST['dir']}/{$files[2]}"));
+        $files = $editor::getCommands($editor::getDirectory());
+        echo $editor::make($editor::getData(FOLDER."/{$files[2]}"));
     }
 
     if ($_POST['key'] == 'loadSelectP') {
-        $editor::selectBox($_POST['dir']);
+        $editor::selectBox($editor::getDirectory());
     }
 
     if ($_POST['key'] == 'selectP') {
-        $options = $editor::getCommands($_POST['folder']);
+        $options = $editor::getCommands(FOLDER);
 
         foreach ($options as $o) {
             if ($o !== '.' && $o !== '..') {
                 $label = basename($o);
-                echo "<option value='{$_POST['folder']}/{$o}'>$label</option>";
+                echo "<option value='".FOLDER."/{$o}'>$label</option>";
             }
         }
     }
 
     if ($_POST['key'] == 'search') {
-        $options = $editor::getFile($_POST['dir'], $_POST['file']);
+        $options = $editor::getFile(FOLDER, $_POST['file']);
         $size = count($options);
         $html = "" ?? null;
         foreach ($options as $o) {
-            $html .= "<option value='{$_POST['dir']}/{$o}.php'>$o</option>";
+            $html .= "<option value='".FOLDER."/{$o}.php'>$o</option>";
         }
 
         echo json_encode(['html' => $html, 'size' => $size]);

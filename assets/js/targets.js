@@ -1,37 +1,9 @@
 $(document).ready(() => {
-    loadSelectP('<?php echo $directory; ?>');
-
-    $.ajax({
-        url: 'ajaxP.php',
-        type: 'POST',
-        dataType: 'text',
-        data: {
-            key: 'loadP',
-            dir: "<?php echo $directory; ?>",
-        },
-        success: (response) => {
-            $("#editor").html(response)
-        }
-    });
-
-    $.ajax({
-        url: 'ajaxT.php',
-        type: 'POST',
-        dataType: 'text',
-        data: {
-            key: 'loadT',
-            dir: "<?php echo $directory; ?>",
-        },
-        success: (response) => {
-            $("#tweaks").html(response)
-        }
-    });
-
     $("#files").on('change', () => {
         loadP();
     });
 
-    ("#editor").on('keydown', (event) => {
+    $("#editor").on('keydown', (event) => {
         ctrlSaveP(event);
     });
 
@@ -56,3 +28,33 @@ $(document).ready(() => {
         saveP();
     });
 });
+
+function initEditor(dir) {
+    return $.ajax({
+        url: 'ajaxP.php',
+        type: 'POST',
+        dataType: 'text',
+        data: {
+            key: 'loadP',
+            dir: dir,
+        },
+        success: (response) =>{
+            $("#editor").html(response)
+        }
+    });
+}
+
+function initTweaks(dir) {
+    return $.ajax({
+        url: 'ajaxT.php',
+        type: 'POST',
+        dataType: 'text',
+        data: {
+            key: 'loadT',
+            dir: dir,
+        },
+        success: (response) =>{
+            $("#tweaks").html(response)
+        }
+    });
+}

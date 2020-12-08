@@ -4,6 +4,7 @@ namespace Source;
 
 class Editor
 {
+    protected static string $directory;
 
     public static function format($data)
     {
@@ -56,9 +57,9 @@ class Editor
         return $data;
     }
 
-    public static function getCommands($directory)
+    public static function getCommands()
     {
-        return scandir($directory);
+        return scandir(self::getDirectory());
     }
 
     public static function getFile($directory, $file)
@@ -93,5 +94,15 @@ class Editor
         foreach (self::selectFile($directory) as $option) {
             echo $option;
         }
+    }
+
+    public static function setDirectory($directory) : void
+    { 
+        self::$directory = $directory;
+    }
+
+    public static function getDirectory() : string
+    { 
+        return self::$directory;
     }
 }

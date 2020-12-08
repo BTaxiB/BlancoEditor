@@ -3,6 +3,10 @@ html {
     width: 1920px;
 }
 
+body {
+    background-image: url("/assets/background.png");
+    background-color: slategrey;
+}
 h5 {
     color: greenyellow;
 }
@@ -60,7 +64,14 @@ select {
 }
 
 #tweaks {
-    display: hidden;
+    display: none;
+    position: relative;
+    margin: 20px auto 0 auto;
+    height: fit-content;
+    width: 80%;
+    background-image: url("/assets/download.png");
+    background-repeat: round;
+    background-size: auto;
 }
 
 .windowP {
@@ -70,8 +81,9 @@ select {
     justify-content: space-around;
 }
 
-.windowP:hover{
-    background-color: darkkhaki;
+.switch div:hover {
+    background-color: silver;
+    color: blue;
 }
 
 .windowT {
@@ -79,10 +91,6 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.windowT:hover{
-    background-color: darkkhaki;
 }
 
 .switch {
@@ -93,6 +101,7 @@ select {
     margin: 20px auto;
     padding-top: 5px;
     border-radius: 5px;
+    background-color: snow;
 }
 
 .label {
