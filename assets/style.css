@@ -74,19 +74,12 @@ select {
     background-size: auto;
 }
 
-.windowP {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 .switch div:hover {
     background-color: silver;
     color: blue;
 }
 
-.windowT {
+.switch div {
     width: 50%;
     display: flex;
     flex-direction: row;
