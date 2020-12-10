@@ -67,11 +67,11 @@ class EditorController extends Controller
     }
 
     /**
-     * @return array
+     * @return void
      */
     public function initForm()
     {
         $files = self::$control::getCommands(self::getDirectory());
-        return self::$control::make(self::$control::getData(self::getDirectory()."/{$files[2]}"));
+        self::$control::make(self::$control::getData(self::getDirectory()."/{$files[2]}"));
     }
 }
