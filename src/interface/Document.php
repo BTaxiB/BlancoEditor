@@ -8,12 +8,12 @@ namespace JetRefacto\Template;
 interface Document
 {
     /**
-     * Set working directory string;
+     * Set working directory string.
      */
     public static function setDirectory(string $directory) : void;
 
     /**
-     * Get working directory string;
+     * Get working directory string.
      */
     public static function getDirectory();
 
