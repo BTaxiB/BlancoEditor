@@ -15,7 +15,7 @@ interface Document
     /**
      * Get working directory string;
      */
-    public static function getDirectory() : string;
+    public static function getDirectory();
 
     /**
      * Print out formatted file.

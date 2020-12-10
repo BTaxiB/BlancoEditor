@@ -14,7 +14,7 @@ class GeneralOptions implements Document
         self::$directory = $directory;
     }
 
-    public static function getDirectory() : string
+    public static function getDirectory()
     {
         return self::$directory;
     }

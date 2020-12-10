@@ -7,4 +7,7 @@ namespace JetRefacto\Template;
  */
 interface JetControl {
 
+    public static function setFile(?string $filename) : void;
+
+    public static function getFile();
 }
