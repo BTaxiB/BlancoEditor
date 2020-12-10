@@ -15,6 +15,10 @@ class Controller implements JetControl
         self::$control = $control;
     }
 
+    public static function getControl() {
+        return self::$control;
+    }
+
     public static function setFile(?string $filename) : void {
         self::$filename = $filename;
     }
@@ -23,8 +27,8 @@ class Controller implements JetControl
         return self::$filename;
     }
 
-    public static function setData(?string $data) : void {
-        self::$data = $data;
+    public static function setData() : void {
+        self::$data = self::getControl()::getData(self::getFile());
     }
 
     public static function getData() {

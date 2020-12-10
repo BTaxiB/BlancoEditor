@@ -13,7 +13,7 @@ interface JetControl {
 
     public static function getFile();   
     
-    public static function setData(?string $data) : void;
+    public static function setData() : void;
 
     public static function getData();
 }

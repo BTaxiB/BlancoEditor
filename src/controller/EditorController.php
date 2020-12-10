@@ -27,13 +27,14 @@ class EditorController extends Controller
         return self::$control::save(self::getFile(), self::getData());
     }
 
+
     public function edit()
     {
-        self::setData($this->control::format($_POST['data'], self::getFile()));
-
+        //$this->control::format($_POST['data'], self::getFile())
+        self::setData();
         self::toJSON([
-            'html' => $this->control::getData(self::getFile()),
-            'message' => $this->control::save(self::getFile(), self::getData()),
+            'html' => self::getData(),
+            'message' => self::saveFile(),
         ]);
     }
 }
