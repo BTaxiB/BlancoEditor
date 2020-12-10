@@ -2,21 +2,22 @@
 require_once 'src/Bootstrap.php';
 
 if (isset($_POST['key'])) {
+    $test::setDirectory(FOLDER);
     switch ($_POST['key']) {
         case 'saveP':
-           $control->edit();
+           $test->edit();
            break;
 
         case 'loadP':
-            $control->initForm();
+            $test->initForm();
             break;
 
         case 'loadSelectP':
-            $control->initSelect();
+            $test->initSelect();
             break;
 
         case 'showP':
-            echo $control->show();
+            echo $test->show();
             break;
         
         default:

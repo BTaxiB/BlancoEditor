@@ -30,7 +30,7 @@ class EditorController extends Controller
      */
     public static function saveFile()
     {
-        return self::$control::save(self::getFile(), self::getData());
+        return self::getControl()::save(self::getFile(), self::getData());
     }
 
 
@@ -52,8 +52,9 @@ class EditorController extends Controller
      * @return string
      */
     public function show()
-    {
-        return self::$control::make(self::getData());
+    { 
+        self::setData();
+        return self::getControl()::make(self::getData());
     }
 
     
@@ -62,7 +63,7 @@ class EditorController extends Controller
      */
     public function initSelect()
     {
-        self::$control::selectBox(self::getDirectory());
+        self::getControl()::selectBox(self::getDirectory());
     }
 
     /**
@@ -70,7 +71,7 @@ class EditorController extends Controller
      */
     public function initForm()
     {
-        $files = self::$control::getCommands(self::getDirectory());
-        self::$control::make(self::$control::getData(self::getDirectory()."/{$files[2]}"));
+        $files = self::getControl()::getCommands(self::getDirectory());
+        self::getControl()::make(self::getControl()::getData(self::getDirectory()."/{$files[2]}"));
     }
 }

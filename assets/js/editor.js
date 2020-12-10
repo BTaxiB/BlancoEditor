@@ -25,7 +25,7 @@ function loadP() {
     var title = $("#files option:selected").html();
     var filename = $("#files option:selected").val();
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'test.php',
         type: 'POST',
         dataType: 'text',
         data: {
@@ -44,7 +44,7 @@ function saveP(){
     var code = $("#editor").text();
     var file = $("#filename").val();
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'test.php',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -86,7 +86,7 @@ function searchFileP(dir) {
 
 function loadSelectP(dir) {
     $.ajax({
-        url: 'ajaxP.php',
+        url: 'test.php',
         type: 'POST',
         dataType: 'text',
         data: {
