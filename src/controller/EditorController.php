@@ -3,7 +3,6 @@
 namespace JetRefacto\Controller;
 
 use JetRefacto\Boot\Editor;
-use PDO;
 
 class EditorController extends Controller
 {
