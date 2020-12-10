@@ -2,6 +2,9 @@
 
 namespace JetRefacto\Template;
 
+/**
+ * File code editor.
+ */
 interface Document
 {
     /**
