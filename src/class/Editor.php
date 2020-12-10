@@ -1,38 +1,14 @@
 <?php
 
-namespace Source;
+namespace JetRefacto\Boot;
 
-class Editor
+use JetRefacto\Boot\GeneralOptions;
+
+class Editor extends GeneralOptions
 {
-    protected static string $directory;
-
-    public static function format($data)
+    public static function getData(string $filename)
     {
-        $data = htmlspecialchars_decode($data);
-        $data = strip_tags($data) . PHP_EOL;
-        $data = str_replace('phptag', '<?php ' . PHP_EOL, $data);
-        return $data;
-    }
-
-    public static function save($file, $data, $mode = "w")
-    {
-        $handle = fopen($file, $mode) or die("Can't open file for writing.");
-        fwrite($handle, $data);
-        fclose($handle);
-        $filename = basename($file);
-        return str_replace(".php", "", "Edited {$filename} successfully!");
-    }
-
-    public static function make($data)
-    {
-        foreach ($data as $d) {
-            echo htmlspecialchars_decode($d);
-        }
-    }
-
-    public static function getData($filename)
-    {
-        $lines = file($filename, FILE_IGNORE_NEW_LINES);
+        $lines = self::readFile($filename);
         $data = [];
         $i = 0;
         for ($i = 0; $i < count($lines); $i++) {
@@ -57,52 +33,5 @@ class Editor
         return $data;
     }
 
-    public static function getCommands()
-    {
-        return scandir(self::getDirectory());
-    }
-
-    public static function getFile($directory, $file)
-    {
-        $folder = self::getCommands($directory);
-        $data = [];
-        foreach ($folder as $d) {
-            $check = strtolower(basename($d));
-            if (stristr($check, strtolower($file))) {
-                $data[] = $file;
-            }
-        }
-        return $data;
-    }
-
-    public static function selectFile($directory)
-    {
-        $data = [];
-        $options = self::getCommands($directory);
-
-        foreach ($options as $o) {
-            if ($o !== '.' && $o !== '..') {
-                $label = str_replace("Command.php", "", $o);
-                $data[] = "<option value='{$directory}/{$o}'>$label</option>";
-            }
-        }
-        return $data;
-    }
-
-    public static function selectBox($directory)
-    {
-        foreach (self::selectFile($directory) as $option) {
-            echo $option;
-        }
-    }
-
-    public static function setDirectory($directory) : void
-    { 
-        self::$directory = $directory;
-    }
-
-    public static function getDirectory() : string
-    { 
-        return self::$directory;
-    }
+ 
 }

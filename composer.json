@@ -8,7 +8,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "Source\\": "src/class/"
+            "JetRefacto\\": "src/",
+            "JetRefacto\\Boot\\": "src/class/",
+            "JetRefacto\\Template\\": "src/interface/"
         }
     },
     "require": {}

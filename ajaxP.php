@@ -28,12 +28,12 @@ if (isset($_POST['key'])) {
     }
 
     if ($_POST['key'] == 'loadP') {
-        $files = $editor::getCommands($editor::getDirectory());
+        $files = $editor::getCommands(FOLDER);
         echo $editor::make($editor::getData(FOLDER."/{$files[2]}"));
     }
 
     if ($_POST['key'] == 'loadSelectP') {
-        $editor::selectBox($editor::getDirectory());
+        $editor::selectBox(FOLDER);
     }
 
     if ($_POST['key'] == 'selectP') {

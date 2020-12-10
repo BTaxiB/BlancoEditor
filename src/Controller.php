@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
-use Source\Editor as Editor;
-use Source\Tweaks as Tweaks;
+use JetRefacto\Boot\Editor as Editor;
+use JetRefacto\Boot\Tweaks as Tweaks;
 
 $editor = new Editor;
 $tweaks = new Tweaks;
