@@ -1,5 +1,5 @@
 <?php
-require_once 'src/Controller.php';
+require_once 'src/Bootstrap.php';
 if (isset($_POST['key'])) {
     if ($_POST['key'] == 'saveP') {
         $data = $editor::format($_POST['data'], $_POST['file']);
