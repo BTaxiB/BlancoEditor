@@ -10,7 +10,8 @@
         "psr-4": {
             "JetRefacto\\": "src/",
             "JetRefacto\\Boot\\": "src/class/",
-            "JetRefacto\\Template\\": "src/interface/"
+            "JetRefacto\\Template\\": "src/interface/",
+            "JetRefacto\\Controller\\": "src/interface/"
         }
     },
     "require": {}
