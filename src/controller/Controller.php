@@ -6,7 +6,7 @@ use JetRefacto\Template\JetControl;
 
 class Controller implements JetControl
 {
-    // protected static ?string $directory;
+    protected static ?string $directory;
     protected static ?string $filename;
     protected static ?object $control;
     protected static ?string $data;
@@ -33,5 +33,13 @@ class Controller implements JetControl
 
     public static function getData() {
         return self::$data;
+    }
+    
+    public static function setDirectory(?string $directory) : void {
+        self::$directory = $directory;
+    }
+
+    public static function getDirectory() {
+        return self::$directory;
     }
 }

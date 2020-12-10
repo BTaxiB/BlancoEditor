@@ -15,5 +15,9 @@ interface JetControl {
     
     public static function setData() : void;
 
-    public static function getData();
+    public static function getData();    
+    
+    public static function setDirectory(?string $directory) : void;
+
+    public static function getDirectory();
 }
