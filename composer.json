@@ -1,5 +1,5 @@
 {
-    "name": "miljan/testdevtool",
+    "name": "blanco/editor",
     "authors": [
         {
             "name": "btaxib",
@@ -8,10 +8,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "JetRefacto\\": "src/",
-            "JetRefacto\\Boot\\": "src/class/",
-            "JetRefacto\\Template\\": "src/interface/",
-            "JetRefacto\\Controller\\": "src/interface/"
+            "BlancoEditor\\": "src/",
+            "BlancoEditor\\Boot\\": "src/class/",
+            "BlancoEditor\\Template\\": "src/interface/",
+            "BlancoEditor\\Controller\\": "src/interface/"
         }
     },
     "require": {}

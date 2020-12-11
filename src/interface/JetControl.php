@@ -1,6 +1,6 @@
 <?php
 
-namespace JetRefacto\Template;
+namespace BlancoEditor\Template;
 
 /**
  * Logic with Ajax Handling

@@ -1,8 +1,8 @@
 <?php
 
-namespace JetRefacto\Boot;
+namespace BlancoEditor\Boot;
 
-use JetRefacto\Template\Document;
+use BlancoEditor\Template\Document;
 
 class GeneralOptions implements Document
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace JetRefacto\Controller;
+namespace BlancoEditor\Controller;
 
-use JetRefacto\Boot\Editor;
+use BlancoEditor\Boot\Editor;
 
 class EditorController extends Controller
 {

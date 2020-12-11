@@ -1,8 +1,8 @@
 <?php
 
-namespace JetRefacto\Controller;
+namespace BlancoEditor\Controller;
 
-use JetRefacto\Template\JetControl;
+use BlancoEditor\Template\JetControl;
 
 class Controller implements JetControl
 {

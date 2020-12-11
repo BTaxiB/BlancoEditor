@@ -1,8 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
-use JetRefacto\Boot\Editor as Editor;
-use JetRefacto\Boot\Tweaks as Tweaks;
-use JetRefacto\Controller\EditorController as test;
+use BlancoEditor\Boot\Editor as Editor;
+use BlancoEditor\Boot\Tweaks as Tweaks;
+use BlancoEditor\Controller\EditorController as test;
 
 $test = new test;
 $editor = new Editor;

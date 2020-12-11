@@ -1,8 +1,8 @@
 <?php
 
-namespace JetRefacto\Boot;
+namespace BlancoEditor\Boot;
 
-use JetRefacto\Boot\GeneralOptions;
+use BlancoEditor\Boot\GeneralOptions;
 
 class Editor extends GeneralOptions
 {
