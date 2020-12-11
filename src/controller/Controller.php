@@ -2,9 +2,9 @@
 
 namespace BlancoEditor\Controller;
 
-use BlancoEditor\Template\JetControl;
+use BlancoEditor\Template\HoodControl;
 
-class Controller implements JetControl
+class Controller implements HoodControl
 {
     protected static ?string $directory;
     protected static ?string $filename;
