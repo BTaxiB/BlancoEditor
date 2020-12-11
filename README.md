@@ -3,4 +3,4 @@
 
 composer require verdana/blancoeditor
 
-***<MAY FORCE BE WITH YOU>***
+# ****************MAY FORCE BE WITH YOU****************
