@@ -3,9 +3,10 @@ require_once 'src/Bootstrap.php';
 
 if (isset($_POST['key'])) {
     $test::setDirectory(FOLDER);
+    $test::setFile($_POST['file'] ?? null);
     switch ($_POST['key']) {
         case 'saveP':
-           $test->edit();
+           echo $test->edit($_POST['data']);
            break;
 
         case 'loadP':
@@ -17,7 +18,7 @@ if (isset($_POST['key'])) {
             break;
 
         case 'showP':
-            echo $test->show();
+            $test->show();
             break;
         
         default:

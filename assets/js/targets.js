@@ -31,7 +31,7 @@ $(document).ready(() => {
 
 function initEditor(dir) {
     return $.ajax({
-        url: 'ajaxP.php',
+        url: 'test.php',
         type: 'POST',
         dataType: 'text',
         data: {

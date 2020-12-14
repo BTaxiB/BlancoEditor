@@ -5,7 +5,7 @@ namespace BlancoEditor\Template;
 /**
  * Logic with Ajax Handling
  */
-interface JetControl {
+interface Control {
 
     public static function setControl(?object $control) : void;
 

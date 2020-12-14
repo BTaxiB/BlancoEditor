@@ -16,6 +16,16 @@ interface Document
      * Get working directory string.
      */
     public static function getDirectory();
+    
+    // /**
+    //  * Initialize Blade templating engine.
+    //  */
+    // public static function setBlade(object $blade) : void;
+
+    // /**
+    //  * Get instance of Blade templating engine.
+    //  */
+    // public static function getBlade();
 
     /**
      * Print out formatted file.
@@ -56,4 +66,39 @@ interface Document
      * Prints out select box.
      */
     public static function selectBox() : void;
+
+    /**
+     * Wraps contents in hidden html tag.
+     */
+    public static function hideContent(string $content) : string;
+
+    /**
+     * Wraps comment in span tag.
+     */
+    public static function wrapComment(string $comment) : string;
+
+    /**
+     * Wraps editable content in textarea tag.
+     */
+    public static function wrapEditable(string $content, ?string $class = null, ?string $onInput = 'convertP(this);') : string;
+
+    /**
+     * Wrap content in option tag.
+     */
+    public static function wrapOption(string $value, string $content) : string;
+
+    /**
+    * Renders hidden input out of filename.
+    */
+    public static function fileID(string $filename) : string;
+    
+    /**
+    * Check if line is editable or not. Basic delimiter //editable.
+    */
+    public static function isEditable(string $line, string $delimiter = "//editable") : bool;
+
+    /**
+    * Check if line is empty or not.
+    */
+    public static function isEmpty(string $line) : bool;
 }

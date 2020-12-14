@@ -17,20 +17,15 @@ class EditorController extends Controller
         self::setControl(new Editor);
     }
 
-    /**
-     * @return void
-     */
-    public static function toJSON(?array $data)
-    {
-        echo json_encode($data);
-    }
+ 
 
     /**
      * @return string
      */
-    public static function saveFile()
+    public static function saveFile($data)
     {
-        return self::getControl()::save(self::getFile(), self::getData());
+        // $data = self::toString(self::getData());
+        return self::getControl()::save(self::getFile(), $data);
     }
 
 
@@ -38,13 +33,16 @@ class EditorController extends Controller
      * Save edited contents.
      * @return JSON
      */
-    public function edit()
+    public function edit($data)
     {
         //$this->control::format($_POST['data'], self::getFile())
+        // $data = self::toString(self::getData());
+        $data = self::getControl()::format($data);
         self::setData();
+
         self::toJSON([
-            'html' => self::getData(),
-            'message' => self::saveFile(),
+            'html' => self::getControl()::make(self::getData()),
+            'message' => self::saveFile($data),
         ]);
     }
 
@@ -52,7 +50,7 @@ class EditorController extends Controller
      * @return string
      */
     public function show()
-    { 
+    {
         self::setData();
         return self::getControl()::make(self::getData());
     }

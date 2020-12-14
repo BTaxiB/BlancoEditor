@@ -6,32 +6,32 @@ use BlancoEditor\Boot\GeneralOptions;
 
 class Editor extends GeneralOptions
 {
-    public static function getData(string $filename)
+    public static function getData(string $filename) : array
     {
         $lines = self::readFile($filename);
         $data = [];
         $i = 0;
         for ($i = 0; $i < count($lines); $i++) {
             if ($i < 1) {
-                $data[] = '<span hidden>phptag</span>';
+                $data[] = self::hideContent("phptag");
                 continue;
             }
-            if (stristr($lines[$i], "//editable")) {
-                $data[] = "<span>{$lines[$i]}</span>" . PHP_EOL;
-                $editable = trim($lines[$i + 1]) ?? null;
-                $data[] = '<textarea class="form-control editable" rows="2" cols="10" style="resize: none;" oninput="convertP(this);">' . $editable . '</textarea></br>' . PHP_EOL . PHP_EOL;
+            
+            if (self::isEditable($lines[$i])) {
+                $data[] = self::wrapComment($lines[$i]);
+                $editable = trim($lines[$i + 1]);
+                $data[] = self::wrapEditable($editable);
                 $i = $i + 2;
-            } elseif (trim($lines[$i]) == '') {
-                $data[] = trim($lines[$i]);
+            }
+            
+            if (self::isEmpty($lines[$i])) {
+                $data[] = $lines[$i];
             } else {
-                $data[] = "<span hidden>{$lines[$i]}</span>" . PHP_EOL;
+                $data[] = self::hideContent($lines[$i]);
             }
         }
-
-        $data[] = "<input type='hidden' id='filename' value='$filename'/>";
+        $data[] = self::fileID($filename ?? null);
 
         return $data;
     }
-
- 
 }

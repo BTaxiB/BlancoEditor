@@ -11,7 +11,7 @@
             "BlancoEditor\\": "src/",
             "BlancoEditor\\Boot\\": "src/class/",
             "BlancoEditor\\Template\\": "src/interface/",
-            "BlancoEditor\\Controller\\": "src/interface/"
+            "BlancoEditor\\Controller\\": "src/controller/"
         }
     },
     "require": {}
