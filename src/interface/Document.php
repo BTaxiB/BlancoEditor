@@ -16,16 +16,6 @@ interface Document
      * Get working directory string.
      */
     public static function getDirectory();
-    
-    // /**
-    //  * Initialize Blade templating engine.
-    //  */
-    // public static function setBlade(object $blade) : void;
-
-    // /**
-    //  * Get instance of Blade templating engine.
-    //  */
-    // public static function getBlade();
 
     /**
      * Print out formatted file.

@@ -17,8 +17,6 @@ class EditorController extends Controller
         self::setControl(new Editor);
     }
 
- 
-
     /**
      * @return string
      */
